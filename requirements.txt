@@ -1,0 +1,9 @@
+numpy
+rank-bm25
+sentence-transformers
+sqlitedict
+tokenizers
+torch
+torchvision
+tqdm
+transformers
