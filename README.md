@@ -1,5 +1,17 @@
 # Referral-augmented retrieval (RAR)
 
+<p>
+    <a href="https://badge.fury.io/py/referral-augment">
+        <img src="https://badge.fury.io/py/referral-augment.svg">
+    </a>
+    <a href="https://www.python.org/">
+        <img alt="Build" src="https://img.shields.io/badge/Python-3.8+-purple.svg">
+    </a>
+    <a href="https://copyright.princeton.edu/policy">
+        <img alt="License" src="https://img.shields.io/badge/License-MIT-blue">
+    </a>
+</p>
+
 ![RAR diagram](images/overview.png)
 
 ## Installation
