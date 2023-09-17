@@ -71,8 +71,8 @@ We provide sample data in zipped form [here](https://drive.google.com/file/d/1IV
 Our sample data covers two domains, each with a *corpus* of documents and referrals and an evaluation *dataset* of queries and ground truth documents. Under the `paper_retrieval` domain, we include the `acl`, `acl_small`, and `arxiv` corpuses and datasets, and under the `entity_retrieval` domain, we include the `dbpedia_small` corpus and dataset.
 
 Construction details:
-- The `acl_small`, `acl`, and `arxiv` corpuses are constructed from the rich paper metadata parses provided by Allen AI's [S2ORC](https://github.com/allenai/s2orc) project. Documents consist of concatenated paper titles and abstracts from up-to-2017 ACL and ArXiv papers, respectively, and referrals consist of in-text citations between up-to-2017 papers. The respective evaluation datasets are also from the parses, consisting of in-text citations from *2018-and-on* papers citing the up-to-2017 papers in the corpus -- this time-based split prevents data leakage and mirrors deployment conditions.
-- The `dbpedia_small` corpus and dataset is sampled from the DBPedia task in the [BEIR](https://github.com/beir-cellar/beir) benchmark. Referrals are mined from Wikipedia HTML using [WikiExtractor](https://github.com/attardi/wikiextractor).
+* The `acl_small`, `acl`, and `arxiv` corpuses are constructed from the rich paper metadata parses provided by Allen AI's [S2ORC](https://github.com/allenai/s2orc) project. Documents consist of concatenated paper titles and abstracts from up-to-2017 ACL and ArXiv papers, respectively, and referrals consist of in-text citations between up-to-2017 papers. The respective evaluation datasets are also from the parses, consisting of in-text citations from *2018-and-on* papers citing the up-to-2017 papers in the corpus -- this time-based split prevents data leakage and mirrors deployment conditions.
+* The `dbpedia_small` corpus and dataset is sampled from the DBPedia task in the [BEIR](https://github.com/beir-cellar/beir) benchmark. Referrals are mined from Wikipedia HTML using [WikiExtractor](https://github.com/attardi/wikiextractor).
 
 Data can be loaded via our utility functions at `rar.utils`:
 ```python
@@ -81,11 +81,11 @@ docs, referrals = load_corpus(domain='paper_retrieval', corpus='acl_small')
 queries, ground_truth = load_eval_dataset(domain='paper_retrieval', dataset='acl_small')
 ```
 Our data representations are simple and intuitive:
-— A `corpus` is a lists of document strings
-— A set of `referrals` is a list of lists of document strings (one list of referrals per document)
+* A `corpus` is a lists of document strings
+* A set of `referrals` is a list of lists of document strings (one list of referrals per document)
 Similarly:
-— A set of `queries` is a lists of query strings
-— The corresponding `ground_truth` is *either* a list of document strings (one ground truth document per query, e.g. the cited paper in paper retrieval) *or* a list of lists of document strings (multiple relevant ground truth documents per query, e.g. all relevant Wikipedia pages for a given `dbpedia_small` query)
+* A set of `queries` is a lists of query strings
+* The corresponding `ground_truth` is *either* a list of document strings (one ground truth document per query, e.g. the cited paper in paper retrieval) *or* a list of lists of document strings (multiple relevant ground truth documents per query, e.g. all relevant Wikipedia pages for a given `dbpedia_small` query)
 
 ### Custom data
 
