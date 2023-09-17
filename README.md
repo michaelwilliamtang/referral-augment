@@ -83,6 +83,7 @@ queries, ground_truth = load_eval_dataset(domain='paper_retrieval', dataset='acl
 Our data representations are simple and intuitive:
 * A `corpus` is a lists of document strings
 * A set of `referrals` is a list of lists of document strings (one list of referrals per document)
+
 Similarly:
 * A set of `queries` is a lists of query strings
 * The corresponding `ground_truth` is *either* a list of document strings (one ground truth document per query, e.g. the cited paper in paper retrieval) *or* a list of lists of document strings (multiple relevant ground truth documents per query, e.g. all relevant Wikipedia pages for a given `dbpedia_small` query)
